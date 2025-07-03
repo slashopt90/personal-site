@@ -1,0 +1,34 @@
+baseURL: 'https://www.slashopt.at/'
+languageCode: 'en-us'
+title: 'Alberto Racca'
+theme: "PaperMod"
+
+
+menu:
+  main:
+    - name: Blog
+      url: "https://notes.slashopt.at"
+
+
+params:
+  defaultTheme: "dark" # "auto" for system theme, "light" or "dark"
+  profileMode:
+    enabled: true
+    title: "Hi there 👋"
+    imageUrl: "images/profile-picture.jpg"
+    imageTitle: ProfileMode image
+    # imageWidth: 120
+    # imageHeight: 120
+    subtitle: "You reached the personal website of Alberto Racca. <br/> I am a software engineer, currently working in a manufacturing consultancy agency."
+
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/slashopt90"
+    - name: "linkedin"
+      url: "https://linkedin.com/in/alberto-racca-75813889/"
+      
+# ADD THIS SECTION TO ALLOW RAW HTML
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

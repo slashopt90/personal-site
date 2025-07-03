@@ -1,0 +1,14 @@
+version: "3"
+services:
+  my-hugo-site:
+    image: localhost/my-hugo-site:latest
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.my-hugo-site.entrypoints=websecure"
+      - "traefik.http.routers.my-hugo-site.rule=Host(`www.slashopt.at`)"
+      - "traefik.http.routers.my-hugo-site.tls.certresolver=lets-encrypt"
+      - "traefik.http.routers.my-hugo-site.service=my-hugo-site"
+      - "traefik.http.services.my-hugo-site.loadbalancer.server.port=80"
