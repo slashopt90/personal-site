@@ -6,12 +6,20 @@ theme: "PaperMod"
 
 menu:
   main:
-    - name: Blog
-      url: "https://notes.slashopt.at"
+    - identifier: posts
+      name: Blog [WIP]
+      url: /posts/
+      weight: 2
+    - name: Curriculum
+      url: "curriculum.pdf"
 
 
 params:
   defaultTheme: "dark" # "auto" for system theme, "light" or "dark"
+  math: true
+  assets:
+    disableHLJS: false
+    enableKaTeX: true
   profileMode:
     enabled: true
     title: "Hi there 👋"
@@ -26,6 +34,12 @@ params:
       url: "https://github.com/slashopt90"
     - name: "linkedin"
       url: "https://linkedin.com/in/alberto-racca-75813889/"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
       
 # ADD THIS SECTION TO ALLOW RAW HTML
 markup:

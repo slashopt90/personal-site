@@ -1,6 +1,9 @@
 version: "3"
 services:
   my-hugo-site:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: localhost/my-hugo-site:latest
     ports:
       - "8080:80"
