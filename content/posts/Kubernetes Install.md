@@ -1,11 +1,3 @@
----
-title: "Kubernetes install on Ubunutu 22.04"
-date: 2025-07-30T12:00:00
-draft: false
-tags: ["Kubernetes", "Self-Hosting"]
-categories: ["Programming"]
----
-
 # Kubernetes on Ubuntu22.04
 
 https://www.learnlinux.tv/how-to-build-an-awesome-kubernetes-cluster-using-proxmox-virtual-environment/

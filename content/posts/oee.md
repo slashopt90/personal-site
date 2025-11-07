@@ -1,11 +1,3 @@
----
-title: "OEE"
-date: 2025-07-30T12:00:00
-draft: false
-math: true
-tags: ["OEE", "Lean Manufacturing"]
-categories: ["Manufacturing"]
----
 # OEE
 
 ## Calcolo KPI riferiti ad una risorsa

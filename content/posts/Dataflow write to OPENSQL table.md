@@ -1,12 +1,6 @@
----
-title: "Dataflow write to OPENSQL table"
-date: 2025-07-30T12:00:00
-draft: false
-tags: ["Datasphere", "SAP"]
-categories: ["Programming"]
----
 
-In **SAP Datasphere**, you have the need to write to a table created in the *OPENSQL* schema equivalent of the space
+
+In #SAP #Datasphere, you have the need to write to a table created in the *OPENSQL* schema equivalent of the space
 By default, datasphere operations like Data flow have *Read* only access to the table defined in the *OPENSQL* schema
 
 > see https://help.sap.com/docs/SAP_DATASPHERE/be5967d099974c69b77f4549425ca4c0/7eaa370fe4624dea9f182ee9c9ab645f.html?locale=en-US

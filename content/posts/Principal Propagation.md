@@ -1,11 +1,3 @@
----
-title: "Principal Propagation on Cloud Foundry"
-date: 2025-07-30T12:00:00
-draft: false
-tags: ["SAP", "Cloud Foundry","Security"]
-categories: ["Programming"]
----
-
 In *Cloud Foundry*, how to make a request from an application running on a subaccount, to an endpoint handled by another application running on a different subaccount and protected with *Roles*
 
 > official documentation at https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/user-propagation-between-cloud-foundry-applications
