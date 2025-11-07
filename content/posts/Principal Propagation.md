@@ -1,15 +1,22 @@
+---
+title: "Principal Propagation in cloud foundry"
+date: 2025-11-06T10:24:00+01:00
+draft: false
+---
+
+
 In *Cloud Foundry*, how to make a request from an application running on a subaccount, to an endpoint handled by another application running on a different subaccount and protected with *Roles*
 
 > official documentation at https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/user-propagation-between-cloud-foundry-applications
 
 We first need to establish a *SAML* trust between account 2 and account 1, and then configure a destination that can propagate the user login from account 1 to account 2
-![](20250702232157.png)
+![](/20250702232157.png)
 ## Prepare the IdP Metadata  for establishing trust
 
-1. Download the certificate of subaccount 1 by clicking *Export* in *Connectivity* -> *Destination Trust* ![](20250702183626.png)
-> it could be required to generate the trust first ![](20250709101753.png)
-2. Take note of the *subdomain* e *subaccount id* ![](20250709101834.png)
-3.  Download the *SAML Metadata* of subaccount 1 in *Security* -> *Trust Configuration* and click *Download SAML Metadata* ![](20250702183820.png)
+1. Download the certificate of subaccount 1 by clicking *Export* in *Connectivity* -> *Destination Trust* ![](/20250702183626.png)
+> it could be required to generate the trust first ![](/20250709101753.png)
+2. Take note of the *subdomain* e *subaccount id* ![](/20250709101834.png)
+3.  Download the *SAML Metadata* of subaccount 1 in *Security* -> *Trust Configuration* and click *Download SAML Metadata* ![](/20250702183820.png)
 4. In the downloaded file, take note of the value indicated at the place of *\<alias\>*
 ```xml
 ...
@@ -61,8 +68,8 @@ We first need to establish a *SAML* trust between account 2 and account 1, and t
 
 #  Set up the trust between subaccount
 
-1. In the subaccount 2, establish a new trust for the subaccount 1 by going into *Security* -> *Tust Configuration*  and clicking *New SAML Trust Configuration* ![](20250702231500.png)
-2. Paste the content of the metadata file made previosuly and press Parse to fill the form. Do **NOT** flag *Availabgle for User Logon* but flag *Create Shadow Users during Logon*![](20250702231934.png)
+1. In the subaccount 2, establish a new trust for the subaccount 1 by going into *Security* -> *Tust Configuration*  and clicking *New SAML Trust Configuration* ![](/20250702231500.png)
+2. Paste the content of the metadata file made previosuly and press Parse to fill the form. Do **NOT** flag *Availabgle for User Logon* but flag *Create Shadow Users during Logon*![](/20250702231934.png)
 
 # Create the destination 
 1. Download the *SAML Metadata* of subaccount 2 in *Security* -> *Trust Configuration* and click *Download SAML Metadata* 
@@ -89,7 +96,7 @@ We first need to establish a *SAML* trust between account 2 and account 1, and t
 | Token Service User     | The clientid of the XSUAA instance in subaccount 2                                                                    |
 | Token Service Password | The clientsecret of the XSUAA instance in subaccount 2.                                                               |
 | authnContextClassRef   | urn:oasis:names:tc:SAML:2.0:ac:classes:PreviousSession                                                                |
-Add also the Additional property *nameIdFormat* with value *urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress* ![](20250702233412.png)
+Add also the Additional property *nameIdFormat* with value *urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress* ![](/20250702233412.png)
 
 # Handle user roles 
 
@@ -102,4 +109,4 @@ This is very straightforward, but not scalable.
 
 ### Using IdP Group
 A more scalable way is to leverage *IdP Groups.* First a new group is created in the *IdP* and all the relevant users are assigned to that group. After that, in *Security* -> *Role Collections* select the relevant *Role Collection* and *Edit*. In the *User Groups* section, add the newly created group remembering to select the newly created *Identity Provider*
-![](20250702235502.png)
+![](/20250702235502.png)
